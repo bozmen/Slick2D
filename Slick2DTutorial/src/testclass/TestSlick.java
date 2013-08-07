@@ -1,3 +1,4 @@
+package testclass;
 
 public class TestSlick {
 
