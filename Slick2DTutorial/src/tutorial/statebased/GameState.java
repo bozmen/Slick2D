@@ -1,4 +1,4 @@
-package ballzandstick.game;
+package tutorial.statebased;
 
 import java.util.ArrayList;
 import java.util.Random;

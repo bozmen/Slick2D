@@ -1,4 +1,4 @@
-package ballzandstick.game;
+package tutorial.statebased;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
