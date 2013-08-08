@@ -17,7 +17,7 @@ public class RudolfState extends BasicGameState {
 	
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		SpriteSheet rudSprite = new SpriteSheet(new Image("res/rudolf_3.png").getSubImage(0, 0, 570, 95), 96, 95);
+		rudSprite = new SpriteSheet(new Image("res/rudolf_3.png").getSubImage(0, 0, 570, 95), 96, 95);
 		rudAnim = new Animation(rudSprite, 100);
 		
 	}
