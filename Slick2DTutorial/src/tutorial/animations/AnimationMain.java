@@ -2,7 +2,7 @@ package tutorial.animations;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Input;
+import org.newdawn.slick.ScalableGame;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -20,8 +20,8 @@ public class AnimationMain extends StateBasedGame{
 	
 	public static void main(String[] args) throws SlickException{
 		AnimationMain main = new AnimationMain("Animations");
-		AppGameContainer game = new AppGameContainer(main, 500, 500, false);
 		
+		AppGameContainer game = new AppGameContainer(main, 500, 500, false);
 		game.setTargetFrameRate(60);
 		game.start();
 		

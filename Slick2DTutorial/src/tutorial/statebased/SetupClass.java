@@ -15,7 +15,7 @@ public class SetupClass extends StateBasedGame{
 	}
 
 	public static void main(String[] args) throws SlickException {
-		AppGameContainer game = new AppGameContainer(new SetupClass("My Game."), 500, 500, false);
+		AppGameContainer game = new AppGameContainer(new SetupClass("My Game."), 700, 500, false);
 		
 		game.setTargetFrameRate(60);
 		game.start();

@@ -23,7 +23,6 @@ public class ExplosionState extends BasicGameState{
 
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
-		expAnim.draw(150, 150);
 	}
 
 	public void update(GameContainer container, StateBasedGame game, int delta)
@@ -31,7 +30,10 @@ public class ExplosionState extends BasicGameState{
 		if(container.getInput().isKeyPressed(Input.KEY_Q)){
 			game.enterState(1);
 		}
-		
+	}
+
+	public void enter(GameContainer container, StateBasedGame game){
+		expAnim.restart();
 	}
 
 	public int getID() {
