@@ -10,6 +10,8 @@ import org.newdawn.slick.state.StateBasedGame;
 
 import tutorial.gravitygame.Game;
 import tutorial.gravitygame.character.Player;
+import tutorial.gravitygame.controller.MouseAndKeyboardPlayerController;
+import tutorial.gravitygame.controller.PlayerController;
 import tutorial.gravitygame.level.Level;
 
 public class LevelState extends BasicGameState{
@@ -17,6 +19,7 @@ public class LevelState extends BasicGameState{
 	Level level;
 	String startingLevel;
 	Player player;
+	PlayerController playerController;
 	
 	public LevelState(String startingLevel){
 		this.startingLevel = startingLevel;
@@ -29,6 +32,9 @@ public class LevelState extends BasicGameState{
 		// adding characters to the map
 		player = new Player(128, 416);
 		level.addCharacter(player);
+		
+		// creating a input handler for player
+		playerController = new MouseAndKeyboardPlayerController(player);
 	}
 
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
@@ -39,7 +45,7 @@ public class LevelState extends BasicGameState{
 
 	public void update(GameContainer container, StateBasedGame gaame, int delta)
 			throws SlickException {
-		
+		playerController.handleInput(container.getInput(), delta);
 	}
 	
 	public void keyPressed(int key, char code){

@@ -9,5 +9,13 @@ public class Player extends Character {
 		super(x, y);
 		sprite = new Image("res/gravitygame/char/player.png");
 	}
+
+	public void moveLeft(int delta) {
+		x = x - (0.15f*delta);
+	}
+	
+	public void moveRight(int delta) {
+		x = x + (0.15f*delta);
+	}
 	
 }
