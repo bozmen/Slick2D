@@ -21,6 +21,12 @@ public class MouseAndKeyboardPlayerController extends PlayerController {
 			player.moveLeft(delta);
 		} else if (i.isKeyDown(Input.KEY_D) || i.isKeyDown(Input.KEY_RIGHT)){
 			player.moveRight(delta);
+		} else {
+			player.setMoving(false);
+		}
+		
+		if(i.isKeyDown(Input.KEY_SPACE)){
+			player.jump();
 		}
 	}
 

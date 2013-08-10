@@ -13,6 +13,7 @@ import tutorial.gravitygame.character.Player;
 import tutorial.gravitygame.controller.MouseAndKeyboardPlayerController;
 import tutorial.gravitygame.controller.PlayerController;
 import tutorial.gravitygame.level.Level;
+import tutorial.gravitygame.physics.Physics;
 
 public class LevelState extends BasicGameState{
 	
@@ -20,6 +21,7 @@ public class LevelState extends BasicGameState{
 	String startingLevel;
 	Player player;
 	PlayerController playerController;
+	Physics physics;
 	
 	public LevelState(String startingLevel){
 		this.startingLevel = startingLevel;
@@ -35,6 +37,8 @@ public class LevelState extends BasicGameState{
 		
 		// creating a input handler for player
 		playerController = new MouseAndKeyboardPlayerController(player);
+		
+		// physics
 	}
 
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
@@ -46,6 +50,7 @@ public class LevelState extends BasicGameState{
 	public void update(GameContainer container, StateBasedGame gaame, int delta)
 			throws SlickException {
 		playerController.handleInput(container.getInput(), delta);
+		physics.handlePhysics(level, delta);
 	}
 	
 	public void keyPressed(int key, char code){
