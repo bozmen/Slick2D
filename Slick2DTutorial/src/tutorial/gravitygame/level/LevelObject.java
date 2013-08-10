@@ -77,4 +77,10 @@ public class LevelObject {
 	public BoundingShape getBoundingShape(){
 		return boundingShape;
 	}
+
+	public void setY(float f) {
+		// TODO Auto-generated method stub
+		y = f;
+		updateBoundingShape();
+	}
 }

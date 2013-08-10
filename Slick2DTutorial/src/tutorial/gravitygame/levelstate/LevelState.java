@@ -39,6 +39,7 @@ public class LevelState extends BasicGameState{
 		playerController = new MouseAndKeyboardPlayerController(player);
 		
 		// physics
+		physics = new Physics();
 	}
 
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
@@ -47,11 +48,11 @@ public class LevelState extends BasicGameState{
 		level.render();
 	}
 
-	public void update(GameContainer container, StateBasedGame gaame, int delta)
-			throws SlickException {
-		playerController.handleInput(container.getInput(), delta);
-		physics.handlePhysics(level, delta);
-	}
+	public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
+        //every update we have to handle the input from the player
+        playerController.handleInput(container.getInput(), delta);
+        physics.handlePhysics(level, delta);
+    }
 	
 	public void keyPressed(int key, char code){
 		if(key == Input.KEY_ESCAPE)
